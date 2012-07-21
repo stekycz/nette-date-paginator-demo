@@ -1,0 +1,53 @@
+{**
+ * My Application layout template.
+ *
+ * @copyright  Copyright (c) 2010 John Doe
+ * @package    MyApplication
+ *
+ * @param string   $basePath web base path
+ * @param string   $robots   tell robots how to index the content of a page (optional)
+ * @param array    $flashes  flash messages
+ *}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<meta name="description" content="Nette Date Paginator">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>Nette Date Paginator</title>
+
+	<link rel="stylesheet" media="all" href="{$basePath}/css/bootstrap.css" type="text/css">
+	<link rel="stylesheet" media="all" href="{$basePath}/css/bootstrap-responsive.css" type="text/css">
+
+	<script type="text/javascript" src="{$basePath}/js/jquery-1.7.2.min.js"></script>
+	<script type="text/JavaScript" src="{$basePath}/js/jquery.livequery.js"></script>
+	<script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
+	<script type="text/JavaScript" src="{$basePath}/js/nette-ajax-driver.js"></script>
+	<script type="text/javascript" src="{$basePath}/js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".alert").alert();
+		});
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>Nette Date Paginator - demo</h1>
+		</div>
+
+		{snippet flashes}
+			<div n:foreach="$flashes as $flash" class="alert alert-{$flash->type}">
+				<a class="close" data-dismiss="alert">&times;</a>
+				{$flash->message}
+			</div>
+		{/snippet}
+
+		{include #content}
+	</div>
+</body>
+</html>
