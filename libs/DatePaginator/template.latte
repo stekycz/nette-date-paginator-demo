@@ -1,0 +1,21 @@
+{*
+ * @param DatePaginator $paginator
+ *}
+
+{if $paginator->days > 1}
+<div class="date-paginator">
+	{if $paginator->isOldest()}
+	<span class="btn">« Previous</span>
+	{else}
+	<a href="{link this, 'date' => $paginator->getPreviousDate()->format('Y-m-d')}">« Previous</a>
+	{/if}
+
+	{$paginator->getDate()->format('j.n.Y')}
+
+	{if $paginator->isNewest()}
+	<span class="btn">Next »</span>
+	{else}
+	<a href="{link this, 'date' => $paginator->getNextDate()->format('Y-m-d')}">Next »</a>
+	{/if}
+</div>
+{/if}
