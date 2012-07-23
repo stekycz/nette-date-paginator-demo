@@ -2,6 +2,7 @@
 
 namespace steky\nette\DatePaginator;
 use \Nette\Application\UI\Control;
+use \Nette\Application\UI\Form;
 use \DateTime;
 
 /**
@@ -17,6 +18,37 @@ class VisualDatePaginator extends Control {
 
 	/** @var DatePaginator */
 	private $paginator = null;
+
+	/**
+	 * @return \Nette\Forms\Form
+	 */
+	public function createComponentDateForm() {
+		$form = new Form();
+		$form->getElementPrototype()->style = 'margin: 0;';
+
+		$form->addDatePicker('paginatorDate')
+			->addRule(Form::VALID, 'Entered date is not valid!')
+			->addCondition(Form::FILLED)
+				->addRule(Form::RANGE, 'Entered date is not within allowed range.', array($this->getPaginator()->getOldestDate(), $this->getPaginator()->getNewestDate()));
+
+		$form['paginatorDate']->setDefaultValue($this->getPaginator()->getDate());
+
+		$form->onSuccess[] = callback($this, 'formSubmitted');
+
+		return $form;
+	}
+
+	/**
+	 * @param \Nette\Forms\Form $form
+	 */
+	public function formSubmitted(Form $form) {
+		$values = $form->getValues();
+
+		$this->getPaginator()->setDate($values['paginatorDate']);
+		$this->date = $values['paginatorDate']->format('Y-m-d');
+
+		$this->redirect('this', array('date' => $this->date, ));
+	}
 
 	/**
 	 * @return DatePaginator
@@ -48,7 +80,7 @@ class VisualDatePaginator extends Control {
 	 */
 	public function loadState(array $params) {
 		parent::loadState($params);
-		$this->getPaginator()->setDate(new DateTime($this->date));
+		$this->getPaginator()->setDate(new DateTime($this->date ?: 'now'));
 	}
 
 }
