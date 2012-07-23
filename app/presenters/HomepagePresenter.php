@@ -24,9 +24,6 @@ class HomepagePresenter extends BasePresenter {
 		$date_paginator = new \steky\nette\DatePaginator\VisualDatePaginator();
 		$date_paginator->getPaginator()->setOldestDate($this->model->getOldestDate());
 		$date_paginator->getPaginator()->setNewestDate($this->model->getNewestDate());
-		if (!$date_paginator->getPaginator()->getDate()) {
-			$date_paginator->getPaginator()->setDate(new DateTime());
-		}
 		return $date_paginator;
 	}
 
