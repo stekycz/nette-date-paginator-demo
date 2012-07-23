@@ -11,6 +11,7 @@ use \DateTime;
  * @property \DateTime $date
  * @property \DateTime $oldestDate
  * @property \DateTime $newestDate
+ * @property int $step
  * @property-read bool $oldest
  * @property-read bool $newest
  * @property-read int $days
@@ -91,6 +92,13 @@ class DatePaginator extends Object {
 	 */
 	public function isNewest() {
 		return $this->newestDate == $this->date;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getStep() {
+		return $this->step;
 	}
 
 	/**
