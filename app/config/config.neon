@@ -12,9 +12,11 @@ common:
 
 	nette:
 		session:
+			savePath: %tempDir%/sessions
 			expiration: '+ 14 days'
 
 	services:
+		model: DummyModel
 
 	factories:
 
