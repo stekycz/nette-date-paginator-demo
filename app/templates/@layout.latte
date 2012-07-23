@@ -21,15 +21,44 @@
 
 	<link rel="stylesheet" media="all" href="{$basePath}/css/bootstrap.css" type="text/css">
 	<link rel="stylesheet" media="all" href="{$basePath}/css/bootstrap-responsive.css" type="text/css">
+	<link rel="stylesheet" media="all" href="{$basePath}/css/ui-lightness/jquery-ui-1.8.21.css" type="text/css">
 
 	<script type="text/javascript" src="{$basePath}/js/jquery-1.7.2.min.js"></script>
 	<script type="text/JavaScript" src="{$basePath}/js/jquery.livequery.js"></script>
+	<script type="text/JavaScript" src="{$basePath}/js/jquery-ui-1.8.21.min.js"></script>
+	<script type="text/JavaScript" src="{$basePath}/js/jquery.ui.datepicker-cs.js"></script>
 	<script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
 	<script type="text/JavaScript" src="{$basePath}/js/nette-ajax-driver.js"></script>
 	<script type="text/javascript" src="{$basePath}/js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".alert").alert();
+
+			$("input.date").each(function () { // input[type=date] does not work in IE
+				var el = $(this);
+				var value = el.val();
+				var date = (value ? $.datepicker.parseDate($.datepicker.W3C, value) : null);
+
+				var minDate = el.attr("min") || null;
+				if (minDate) minDate = $.datepicker.parseDate($.datepicker.W3C, minDate);
+				var maxDate = el.attr("max") || null;
+				if (maxDate) maxDate = $.datepicker.parseDate($.datepicker.W3C, maxDate);
+
+				// input.attr("type", "text") throws exception
+				if (el.attr("type") == "date") {
+					var tmp = $("<input/>");
+					$.each("class,disabled,id,maxlength,name,readonly,required,size,style,tabindex,title,value".split(","), function(i, attr)  {
+						tmp.attr(attr, el.attr(attr));
+					});
+					el.replaceWith(tmp);
+					el = tmp;
+				}
+				el.datepicker({
+					minDate: minDate,
+					maxDate: maxDate
+				});
+				el.val($.datepicker.formatDate(el.datepicker("option", "dateFormat"), date));
+			});
 		});
 	</script>
 </head>

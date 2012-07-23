@@ -3,6 +3,7 @@
  * My Application bootstrap file.
  */
 use Nette\Application\Routers\Route;
+use Nette\Forms\Container;
 
 // Load Nette Framework
 require LIBS_DIR . '/Nette/loader.php';
@@ -28,6 +29,10 @@ $container = $configurator->createContainer();
 // Setup router
 $container->router[] = new Route('index.php', 'Homepage:default', Route::ONE_WAY);
 $container->router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
+
+Container::extensionMethod('addDatePicker', function (Container $container, $name, $label = NULL) {
+	return $container[$name] = new JanTvrdik\Components\DatePicker($label);
+});
 
 // Configure and run the application!
 $container->application->run();
