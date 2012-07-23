@@ -8,6 +8,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://C:/srv/PEAR" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://C:/srv/PEAR" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
 
