@@ -2,7 +2,7 @@
 
 ## Description
 
-Allows paging by date by default per day.
+Allows paging by date by default per one day.
 
 It is build for PHP 5.3+ and based on Nette Framerwork 2.0.
 
@@ -12,15 +12,16 @@ It depends only on [Nette Framework](http://nette.org/).
 
 ## Installation
 
-Copy all files into folder with your project (libs dir).
+Copy whole folder /libs/DatePaginator into folder with your project (libs dir).
 
 ## Demo
 
-Demo application can be found on [date-paginator.steky.cz](date-paginator.steky.cz),
-but it is not running now.
+Demo application can be found on [date-paginator.steky.cz](date-paginator.steky.cz).
 
-In example templates is used [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
-CSS library. Templates should be changed/replaced for using in your own project.
+ In demo application is used [DatePicker+](http://addons.nette.org/cs/datepicker-plus)
+ by [Jan Tvrdík](http://merxes.cz/), [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+ CSS library and [jQuery](http://jquery.com/) with [jQuery UI](http://jqueryui.com/).
+ Templates should be changed/replaced for using in your own project.
 
 ## Author
 

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b1e31bc-b249-42f3-ac00-73633218fab8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/DummyModel.php" afterPath="$PROJECT_DIR$/app/models/DummyModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/Homepage/default.latte" afterPath="$PROJECT_DIR$/app/templates/Homepage/default.latte" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="nette-date-paginator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,7 +39,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/presenters/ErrorPresenter.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/config/config.neon" />
         <option value="$PROJECT_DIR$/app/templates/@layout.latte" />
@@ -56,6 +54,7 @@
         <option value="$PROJECT_DIR$/tests/DatePaginator_Test.php" />
         <option value="$PROJECT_DIR$/app/templates/Homepage/default.latte" />
         <option value="$PROJECT_DIR$/app/models/DummyModel.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -292,13 +291,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/Nette/Application/UI/Control.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="15" selection-start="514" selection-end="514" vertical-scroll-proportion="0.61071426">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/Nette/Application/UI/Presenter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1308" column="15" selection-start="32554" selection-end="32554" vertical-scroll-proportion="-35.07143">
@@ -402,6 +394,13 @@
     <entry file="file://$PROJECT_DIR$/app/models/DummyModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="43" selection-start="403" selection-end="403" vertical-scroll-proportion="0.2984293">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="9" selection-start="757" selection-end="757" vertical-scroll-proportion="0.7903494">
           <folding />
         </state>
       </provider>
