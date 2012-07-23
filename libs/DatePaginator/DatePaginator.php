@@ -32,7 +32,7 @@ class DatePaginator extends Object {
 	private $newestDate;
 
 	/** @var int */
-	private $step = static::DEFAULT_STEP;
+	private $step = self::DEFAULT_STEP;
 
 	/**
 	 * @param \DateTime $date
