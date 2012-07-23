@@ -18,7 +18,7 @@ class DummyModel {
 		if ($this->data === null) {
 			$this->data = array();
 			srand(47);
-			for ($i = 0; $i < 10; $i++) {
+			for ($i = 0; $i < 100; $i++) {
 				$day_move = rand(-14, +14);
 				$date = new DateTime();
 				$this->data[] = array(

@@ -4,6 +4,13 @@
 
 {block content}
 
-{dump $data}
-
 {control datePaginator}
+
+<div n:foreach="$data as $row" class="well">
+	<h2 class="name">{$row['name']}</h2>
+	<span class="date">{$row['date']|date:'j.n.Y'}</span>
+</div>
+
+{if $data}
+{control datePaginator}
+{/if}
