@@ -16,7 +16,7 @@ Copy whole folder /libs/DatePaginator into folder with your project (libs dir).
 
 ## Demo
 
-Demo application can be found on [date-paginator.steky.cz](date-paginator.steky.cz).
+Demo application can be found on [date-paginator.steky.cz](http://date-paginator.steky.cz).
 
  In demo application is used [DatePicker+](http://addons.nette.org/cs/datepicker-plus)
  by [Jan Tvrdík](http://merxes.cz/), [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
