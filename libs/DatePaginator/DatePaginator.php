@@ -9,9 +9,6 @@ use \DateTime;
  * @since 2012-07-21
  *
  * @property \DateTime $date
- * @property \DateTime $oldestDate
- * @property \DateTime $newestDate
- * @property int $step
  * @property-read bool $oldest
  * @property-read bool $newest
  * @property-read int $days
@@ -20,20 +17,14 @@ use \DateTime;
  */
 class DatePaginator extends Object {
 
-	/** Výchozí počet dní jednoho kroku stránky */
-	const DEFAULT_STEP = 1;
-
-	/** @var \DateTime */
+	/** @var \DateTime|null */
 	private $date = null;
 
-	/** @var \DateTime */
-	private $oldestDate = null;
+	/** @var IPeriod|null */
+	private $period = null;
 
-	/** @var \DateTime */
-	private $newestDate = null;
-
-	/** @var int */
-	private $step = self::DEFAULT_STEP;
+	/** @var IModel|null */
+	private $model = null;
 
 	/**
 	 * Pokud zadáme datum mimo nastavené minimum a maximum,
@@ -42,11 +33,11 @@ class DatePaginator extends Object {
 	 * @param \DateTime $date
 	 */
 	public function setDate(DateTime $date) {
-		$date = $this->normalizeDate($date);
-		if ($this->oldestDate !== null && $this->oldestDate > $date) {
-			$date = clone $this->oldestDate;
-		} elseif ($this->newestDate !== null && $this->newestDate < $date) {
-			$date = clone $this->newestDate;
+		$date = $this->period->normalizeDate($date);
+		if ($this->getOldestDate() !== null && $this->getOldestDate() > $date) {
+			$date = clone $this->getOldestDate();
+		} elseif ($this->getNewestDate() !== null && $this->getNewestDate() < $date) {
+			$date = clone $this->getNewestDate();
 		}
 		$this->date = $date;
 	}
@@ -59,101 +50,51 @@ class DatePaginator extends Object {
 	}
 
 	/**
-	 * @param \DateTime $oldestDate
-	 * @throws InvalidArgumentException Pokud nastavuji datum novější než newest
+	 * @param IModel $model
+	 * @return DatePaginator
 	 */
-	public function setOldestDate($oldestDate) {
-		$oldest_date = $this->normalizeDate($oldestDate);
-		if ($this->newestDate !== null && $this->newestDate < $oldest_date) {
-			throw new InvalidArgumentException('Oldest date cannot be newer than newest.');
-		} elseif ($this->date !== null && $oldest_date > $this->date) {
-			throw new InvalidArgumentException('Given oldest date in newer than current date.');
-		}
-		$this->oldestDate = $oldest_date;
+	public function setModel(IModel $model) {
+		$this->model = $model;
+		return $this;
+	}
+
+	/**
+	 * Nastaví stránkovačí periodu.
+	 *
+	 * @param IPeriod $period
+	 * @return DatePaginator
+	 */
+	public function setPeriod(IPeriod $period) {
+		$this->period = $period;
+		return $this;
 	}
 
 	/**
 	 * @return \DateTime
 	 */
 	public function getOldestDate() {
-		return clone $this->oldestDate;
-	}
-
-	/**
-	 * @param \DateTime $newestDate
-	 * @throws InvalidArgumentException Pokud nastavuji datum starší než oldest
-	 */
-	public function setNewestDate($newestDate) {
-		$newest_date = $this->normalizeDate($newestDate);
-		if ($this->oldestDate !== null && $this->oldestDate > $newest_date) {
-			throw new InvalidArgumentException('Newest date cannot be older than oldest.');
-		} elseif ($this->date !== null && $newest_date < $this->date) {
-			throw new InvalidArgumentException('Given newest date in older than current date.');
-		}
-		$this->newestDate = $newest_date;
+		return clone $this->period->normalizeDate($this->model->getOldestDate());
 	}
 
 	/**
 	 * @return \DateTime
 	 */
 	public function getNewestDate() {
-		return clone $this->newestDate;
+		return clone $this->period->normalizeDate($this->model->getNewestDate());
 	}
 
 	/**
 	 * @return bool
 	 */
 	public function isOldest() {
-		return $this->oldestDate == $this->date;
+		return $this->getOldestDate() == $this->date;
 	}
 
 	/**
 	 * @return bool
 	 */
 	public function isNewest() {
-		return $this->newestDate == $this->date;
-	}
-
-	/**
-	 * @return int
-	 */
-	public function getStep() {
-		return $this->step;
-	}
-
-	/**
-	 * Nastaví krok pro posun ve dnech.
-	 *
-	 * @param int $step
-	 * @throws InvalidArgumentException Pokud je krok menší jak 1.
-	 */
-	public function setStep($step) {
-		if (!is_numeric($step)) {
-			throw new InvalidArgumentException('Step for DatePaginator must be a number.');
-		}
-		// Tohle je nutné, protože se správně převede číselný řetězec na číslo (int nebo float)
-		$step = 0 + $step;
-		if (is_float($step)) {
-			throw new InvalidArgumentException('Step for DatePaginator cannot be float.');
-		}
-		if ($step < 1) {
-			throw new InvalidArgumentException('Step for DatePaginator cannot be zero or negative.');
-		}
-		$this->step = intval($step);
-	}
-
-	/**
-	 * Vrací počet dní mezi nejstarším a nejnovějším datem.
-	 *
-	 * @return int
-	 * @throws InvalidStateException Pokud zjistíme, že neest date je starší než oldest
-	 */
-	public function getDays() {
-		if ($this->newestDate < $this->oldestDate) {
-			throw new InvalidStateException('Newest date is older than Oldest date.');
-		}
-		$difference = $this->newestDate->diff($this->oldestDate);
-		return $difference->days;
+		return $this->getNewestDate() == $this->date;
 	}
 
 	/**
@@ -163,11 +104,15 @@ class DatePaginator extends Object {
 	 * @return \DateTime
 	 */
 	public function getPreviousDate() {
-		if ($this->date == $this->oldestDate) {
+		if ($this->date == $this->getOldestDate()) {
 			return $this->date;
 		}
 		$previous_date = clone $this->date;
-		$previous_date = $previous_date->modify('- ' . $this->step . ' days');
+		$previous_date = $previous_date->modify('- ' . $this->period->getPeriod());
+		$closest_previous = $this->period->normalizeDate($this->model->getClosestPrevious($this->date));
+		if ($closest_previous < $previous_date) {
+			$previous_date = clone $closest_previous;
+		}
 		return $previous_date;
 	}
 
@@ -178,24 +123,30 @@ class DatePaginator extends Object {
 	 * @return \DateTime
 	 */
 	public function getNextDate() {
-		if ($this->date == $this->newestDate) {
+		if ($this->date == $this->getNewestDate()) {
 			return $this->date;
 		}
 		$next_date = clone $this->date;
-		$next_date = $next_date->modify('+ ' . $this->step . ' days');
+		$next_date = $next_date->modify('+ ' . $this->period->getPeriod());
+		$closest_next = $this->period->normalizeDate($this->model->getClosestNext($this->date));
+		if ($closest_next > $next_date) {
+			$next_date = clone $closest_next;
+		}
 		return $next_date;
 	}
 
 	/**
-	 * Upraví zadané datum tak, že složka hodin nebude mít vliv. Tedy nastaví
-	 * čas na 00:00:00. Zadaný argument ale není  ovlivněn.
+	 * Vrací počet dní mezi nejstarším a nejnovějším datem.
 	 *
-	 * @param \DateTime $date
-	 * @return \DateTime
+	 * @return int
+	 * @throws InvalidStateException Pokud zjistíme, že neest date je starší než oldest
 	 */
-	private function normalizeDate(DateTime $date) {
-		$clone = clone $date;
-		return $clone->setTime(0, 0, 0);
+	public function getDays() {
+		if ($this->getNewestDate() < $this->getOldestDate()) {
+			throw new InvalidStateException('Newest date is older than Oldest date.');
+		}
+		$difference = $this->getNewestDate()->diff($this->getOldestDate());
+		return (int) $difference->days;
 	}
 
 }

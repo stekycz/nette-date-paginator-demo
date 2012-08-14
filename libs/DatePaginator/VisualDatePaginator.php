@@ -13,7 +13,10 @@ use \DateTime;
  */
 class VisualDatePaginator extends Control {
 
-	/** @persistent */
+	/**
+	 * @persistent
+	 * @var string
+	 */
 	public $date = null;
 
 	/** @var DatePaginator */
@@ -39,7 +42,7 @@ class VisualDatePaginator extends Control {
 	}
 
 	/**
-	 * @param \Nette\Forms\Form $form
+	 * @param \Nette\Application\UI\Form $form
 	 */
 	public function formSubmitted(Form $form) {
 		$values = $form->getValues();
@@ -54,10 +57,20 @@ class VisualDatePaginator extends Control {
 	 * @return DatePaginator
 	 */
 	public function getPaginator() {
-		if (!$this->paginator) {
+		if ($this->paginator === null) {
 			$this->paginator = new DatePaginator();
 		}
 		return $this->paginator;
+	}
+
+	/**
+	 * @param  string|NULL
+	 * @return\Nette\Templating\ITemplate
+	 */
+	protected function createTemplate($class = null) {
+		$template = parent::createTemplate($class);
+		// TODO - registrace vlastních helperů
+		return $template;
 	}
 
 	/**
