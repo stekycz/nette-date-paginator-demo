@@ -1,9 +1,15 @@
 {
-    "hash": "074df0021b3864ea49b94cc55120d1f6",
+    "hash": "2697c5212e3faef6ef683b844ff8713a",
     "packages": [
         {
             "package": "nette/nette",
             "version": "v2.0.4"
+        },
+        {
+            "package": "stekycz/nette-date-paginator",
+            "version": "dev-master",
+            "source-reference": "1.1.0-alpha",
+            "commit-date": "1345244886"
         }
     ],
     "packages-dev": null,
@@ -11,7 +17,7 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ]
+    "stability-flags": {
+        "stekycz/nette-date-paginator": 20
+    }
 }

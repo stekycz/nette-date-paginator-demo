@@ -11,7 +11,8 @@
 	],
 	"require": {
 		"php" : ">=5.3.0",
-		"nette/nette": "2.0.*"
+		"nette/nette": "2.0.*",
+		"stekycz/nette-date-paginator": "dev-master"
 	},
 	"autoload": {
 		"classmap": ["libs/"]
