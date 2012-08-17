@@ -170,11 +170,14 @@ pip-log.txt
 log
 temp
 
-
 #############
 ## PhpStorm
 #############
 
 .idea/workspace.xml
+
+#############
+## Composer
+#############
 
 vendor
