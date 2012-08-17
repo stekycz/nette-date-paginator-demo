@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b1e31bc-b249-42f3-ac00-73633218fab8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/DatePaginator/IModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/DatePaginator/IPeriod.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/DatePaginator/Period/Day.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/DatePaginator/Period/Month.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/DatePaginator/Period/Week.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/DatePaginator/DatePaginator.php" afterPath="$PROJECT_DIR$/libs/DatePaginator/DatePaginator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/DatePaginator/VisualDatePaginator.php" afterPath="$PROJECT_DIR$/libs/DatePaginator/VisualDatePaginator.php" />
     </list>
     <ignored path="nette-date-paginator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +28,26 @@
     <favorites_list name="nette-date-paginator" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="bootstrap.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/bootstrap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="54" selection-start="246" selection-end="246" vertical-scroll-proportion="-6.107143">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.json" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="365" selection-end="365" vertical-scroll-proportion="0.60066557">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -46,9 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tests/bootstrap.php" />
-        <option value="$PROJECT_DIR$/app/bootstrap.php" />
-        <option value="$PROJECT_DIR$/tests/DatePaginator_SetDate_Test.php" />
         <option value="$PROJECT_DIR$/libs/DatePaginator/exceptions.php" />
         <option value="$PROJECT_DIR$/app/presenters/HomepagePresenter.php" />
         <option value="$PROJECT_DIR$/tests/DatePaginator_Test.php" />
@@ -62,6 +73,9 @@
         <option value="$PROJECT_DIR$/libs/DatePaginator/Period/Day.php" />
         <option value="$PROJECT_DIR$/libs/DatePaginator/Period/Month.php" />
         <option value="$PROJECT_DIR$/libs/DatePaginator/VisualDatePaginator.php" />
+        <option value="$PROJECT_DIR$/www/index.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/app/bootstrap.php" />
       </list>
     </option>
   </component>
@@ -102,26 +116,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nette-date-paginator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nette-date-paginator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nette-date-paginator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -132,16 +126,50 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nette-date-paginator-demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nette-date-paginator-demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nette-date-paginator-demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nette-date-paginator-demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nette-date-paginator-demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="Settings.JavaScript" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propDebugger" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.28229666" />
     <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="options.splitter.details.proportions" value="0.28229666" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -221,13 +249,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="786" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1961102" sideWeight="0.6277955" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20745543" sideWeight="0.6709265" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19529983" sideWeight="0.6709265" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21069692" sideWeight="0.6709265" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -298,76 +326,19 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="34" selection-start="923" selection-end="923" vertical-scroll-proportion="-20.357143" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/presenters/HomepagePresenter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="771" selection-end="771" vertical-scroll-proportion="0.69464284" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/DatePaginator_Test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="67" selection-start="4887" selection-end="4887" vertical-scroll-proportion="0.5113438" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/Homepage/default.latte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="9" selection-start="236" selection-end="236" vertical-scroll-proportion="0.43106458" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/DummyModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="43" selection-start="403" selection-end="403" vertical-scroll-proportion="0.2984293" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="9" selection-start="757" selection-end="757" vertical-scroll-proportion="0.7903494" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/DatePaginator/IModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="40" selection-start="859" selection-end="859" vertical-scroll-proportion="0.6178011">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/DatePaginator/DatePaginator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="35" selection-start="2799" selection-end="2799" vertical-scroll-proportion="-0.08202443">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/DatePaginator/IPeriod.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="58" selection-end="58" vertical-scroll-proportion="-2.0357144">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/DatePaginator/Period/Month.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="957" selection-end="957" vertical-scroll-proportion="1.5253054">
-          <folding />
-        </state>
+        <state line="46" column="0" selection-start="957" selection-end="957" vertical-scroll-proportion="1.5253054" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/DatePaginator/Period/Day.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="29" selection-start="798" selection-end="798" vertical-scroll-proportion="0.530541">
-          <folding />
-        </state>
+        <state line="37" column="29" selection-start="798" selection-end="798" vertical-scroll-proportion="0.530541" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/DatePaginator/Period/Week.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="0.8342059">
-          <folding />
-        </state>
+        <state line="46" column="0" selection-start="953" selection-end="953" vertical-scroll-proportion="0.8342059" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/DatePaginator/exceptions.php">
@@ -377,21 +348,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/DatePaginator/template.latte">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="27" selection-start="134" selection-end="134" vertical-scroll-proportion="0.20357142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Nette/Application/UI/Control.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="7" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.31607142">
-          <folding />
-        </state>
+        <state line="6" column="27" selection-start="134" selection-end="134" vertical-scroll-proportion="0.20357142" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/DatePaginator/VisualDatePaginator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="5" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.66071427">
+        <state line="73" column="5" selection-start="1742" selection-end="1742" vertical-scroll-proportion="0.66071427" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/license.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.69550747">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="180" column="0" selection-start="2090" selection-end="2090" vertical-scroll-proportion="0.81031615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.neon">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="263" selection-end="263" vertical-scroll-proportion="0.33158812">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.19895288">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="58" selection-start="104" selection-end="104" vertical-scroll-proportion="0.13263525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="54" selection-start="246" selection-end="246" vertical-scroll-proportion="-6.107143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="365" selection-end="365" vertical-scroll-proportion="0.60066557">
           <folding />
         </state>
       </provider>
