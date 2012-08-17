@@ -1,0 +1,17 @@
+{
+    "hash": "074df0021b3864ea49b94cc55120d1f6",
+    "packages": [
+        {
+            "package": "nette/nette",
+            "version": "v2.0.4"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ]
+}

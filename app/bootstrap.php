@@ -4,8 +4,10 @@ use Nette\Config\Configurator;
 use Nette\Forms\Container;
 use Nette\Application\Routers\Route;
 
+// Composer autoloading
+require_once LIBS_DIR . '/autoload.php';
 // Load Nette Framework
-require LIBS_DIR . '/Nette/loader.php';
+// require LIBS_DIR . '/nette/nette/Nette/loader.php';
 
 // Configure application
 $configurator = new Nette\Config\Configurator;
@@ -18,7 +20,6 @@ $configurator->enableDebugger(APP_DIR . '/../log', 'martin.stekl@gmail.com');
 $configurator->setTempDirectory(APP_DIR . '/../temp');
 $configurator->createRobotLoader()
 	->addDirectory(APP_DIR)
-	->addDirectory(LIBS_DIR)
 	->register();
 
 // Create Dependency Injection container from config.neon file
