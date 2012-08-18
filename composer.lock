@@ -1,5 +1,5 @@
 {
-    "hash": "2697c5212e3faef6ef683b844ff8713a",
+    "hash": "593e5819f67c7d2f5113b44c5ef5916f",
     "packages": [
         {
             "package": "nette/nette",
@@ -9,7 +9,7 @@
             "package": "stekycz/nette-date-paginator",
             "version": "dev-master",
             "source-reference": "1.1.0-alpha",
-            "commit-date": "1345244886"
+            "commit-date": "1345285621"
         }
     ],
     "packages-dev": null,
