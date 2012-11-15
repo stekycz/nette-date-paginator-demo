@@ -1,5 +1,9 @@
 <?php
 
+use steky\nette\DatePaginator\VisualDatePaginator;
+use steky\nette\DatePaginator\Period\Day;
+use Nette\DI\Container;
+
 /**
  * Homepage presenter.
  */
@@ -12,7 +16,7 @@ class HomepagePresenter extends BasePresenter {
 	 * @param \Nette\DI\Container $context
 	 * @param DummyModel $model
 	 */
-	public function __construct(Nette\DI\Container $context, DummyModel $model) {
+	public function __construct(Container $context, DummyModel $model) {
 		parent::__construct($context);
 		$this->model = $model;
 	}
@@ -21,9 +25,9 @@ class HomepagePresenter extends BasePresenter {
 	 * @return \steky\nette\DatePaginator\VisualDatePaginator
 	 */
 	public function createComponentDatePaginator() {
-		$date_paginator = new \steky\nette\DatePaginator\VisualDatePaginator();
-		$date_paginator->getPaginator()->setOldestDate($this->model->getOldestDate());
-		$date_paginator->getPaginator()->setNewestDate($this->model->getNewestDate());
+		$date_paginator = new VisualDatePaginator();
+		$date_paginator->getPaginator()->setModel($this->model);
+		$date_paginator->getPaginator()->setPeriod(new Day());
 		return $date_paginator;
 	}
 
