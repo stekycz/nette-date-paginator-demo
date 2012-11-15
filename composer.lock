@@ -1,15 +1,114 @@
 {
-    "hash": "593e5819f67c7d2f5113b44c5ef5916f",
+    "hash": "cad9c942a4d28691856cb283ea89da6f",
     "packages": [
         {
-            "package": "nette/nette",
-            "version": "v2.0.4"
+            "name": "nette/nette",
+            "version": "v2.0.6",
+            "source": {
+                "type": "git",
+                "url": "http://github.com/nette/nette",
+                "reference": "v2.0.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/nette/nette/zipball/v2.0.6",
+                "reference": "v2.0.6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "nette/tester": "@dev"
+            },
+            "time": "2012-10-01 12:34:05",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "Nette/loader.php"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "http://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "http://nette.org/contributors"
+                }
+            ],
+            "description": "Nette Framework - innovative framework for fast and easy development of secured web applications in PHP. Write less, have cleaner code and your work will bring you joy.",
+            "homepage": "http://nette.org",
+            "keywords": [
+                "templating",
+                "framework",
+                "database",
+                "dbal",
+                "debugging",
+                "mvc",
+                "micro",
+                "Forms",
+                "latte",
+                "neon",
+                "mailing",
+                "images"
+            ]
         },
         {
-            "package": "stekycz/nette-date-paginator",
+            "name": "stekycz/nette-date-paginator",
             "version": "dev-master",
-            "source-reference": "1.1.0-alpha",
-            "commit-date": "1345285621"
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stekycz/nette-date-paginator.git",
+                "reference": "1.1.0-alpha2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/stekycz/nette-date-paginator/zipball/1.1.0-alpha2",
+                "reference": "1.1.0-alpha2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "nette/nette": "2.0.*"
+            },
+            "time": "1351193749",
+            "type": "nette-addon",
+            "installation-source": "source",
+            "autoload": {
+                "classmap": [
+                    "DatePaginator/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Štekl",
+                    "email": "martin.stekl@gmail.com"
+                }
+            ],
+            "description": "DatePaginator - Nette Framework addon for easier paging by any period",
+            "homepage": "http://forum.nette.org/cs/11574-datepaginator-strankovani-po-dnech",
+            "keywords": [
+                "paginator",
+                "date",
+                "nette",
+                "period"
+            ]
         }
     ],
     "packages-dev": null,
