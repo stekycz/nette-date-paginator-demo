@@ -1,14 +1,17 @@
 <?php
 
+use steky\nette\DatePaginator\IModel;
+use Nette\DateTime;
+
 /**
  * Model pro testování DatePaginatoru.
  *
  * @author Martin Štekl <martin.stekl@gmail.com>
  * @since 2012-07-23
  */
-class DummyModel {
+class DummyModel implements IModel {
 
-	/** @var null|array */
+    /** @var null|array */
 	private $data = null;
 
 	/**
@@ -41,7 +44,7 @@ class DummyModel {
 				$oldest_date = $row['date'];
 			}
 		}
-		return $oldest_date;
+		return new DateTime($oldest_date);
 	}
 
 	/**
@@ -56,7 +59,7 @@ class DummyModel {
 				$newest_date = $row['date'];
 			}
 		}
-		return $newest_date;
+		return new DateTime($newest_date);
 	}
 
 	/**
@@ -65,10 +68,48 @@ class DummyModel {
 	 * @param \DateTime $date
 	 * @return array
 	 */
-	public function getForDate(DateTime $date) {
+	public function getForDate(\DateTime $date) {
 		return array_filter($this->data, function ($row) use ($date) {
 			return $row['date']->format('Y-m-d') === $date->format('Y-m-d');
 		});
 	}
+
+    /**
+     * Vrací datum nejbližšího staršího záznamu než zadané datum. Pokud
+     * neexisttuje starší, vrací zadané.
+     *
+     * @param \DateTime $current_date
+     * @return \DateTime
+     */
+    public function getClosestPrevious(\DateTime $current_date)
+    {
+	    $closest_previous = null;
+	    foreach ($this->data as $row) {
+		    if (($row['date'] < $current_date && $row['date'] > $closest_previous) || $closest_previous === null) {
+			    $closest_previous = $row['date'];
+			    break;
+		    }
+	    }
+	    return new DateTime($closest_previous !== null ? $closest_previous : $this->getOldestDate());
+    }
+
+    /**
+     * Vrací datum nejbližšího novějšího záznamu než zadané datum. Pokud
+     * neexisttuje starší, vrací zadané.
+     *
+     * @param \DateTime $current_date
+     * @return \DateTime
+     */
+    public function getClosestNext(\DateTime $current_date)
+    {
+	    $closest_next = null;
+	    foreach ($this->data as $row) {
+		    if (($row['date'] > $current_date && $row['date'] < $closest_next) || $closest_next === null) {
+			    $closest_next = $row['date'];
+			    break;
+		    }
+	    }
+	    return new DateTime($closest_next !== null ? $closest_next : $this->getNewestDate());
+    }
 
 }
