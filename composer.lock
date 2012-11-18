@@ -72,19 +72,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stekycz/nette-date-paginator.git",
-                "reference": "1.1.0-alpha2"
+                "reference": "1.1.0-beta"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/stekycz/nette-date-paginator/zipball/1.1.0-alpha2",
-                "reference": "1.1.0-alpha2",
+                "url": "https://github.com/stekycz/nette-date-paginator/archive/1.1.0-beta.zip",
+                "reference": "1.1.0-beta",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
                 "nette/nette": "2.0.*"
             },
-            "time": "1351193749",
+            "time": "1353198956",
             "type": "nette-addon",
             "installation-source": "source",
             "autoload": {
